@@ -5,15 +5,7 @@ import { SupaMenuHomePage } from "./src/components/SupaMenuHomePage.jsx";
 
 export default function App() {
   return (
-    
+    <SupaMenuHomePage/>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
