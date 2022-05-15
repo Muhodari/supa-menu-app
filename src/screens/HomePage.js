@@ -1,6 +1,6 @@
 import React from 'react'
 import { View,TextInput,Text, StyleSheet ,Platform,StatusBar,} from "react-native"
-import {COLORS, FONTS} from '../constants/colors'
+import {COLORS} from '../constants/colors'
 
 
 const styles = StyleSheet.create({
@@ -8,18 +8,21 @@ const styles = StyleSheet.create({
         paddingTop:Platform.OS ==="ios"? 40: StatusBar.currentHeight +10,
         flex:1,
         backgroundColor:COLORS.ORANGE,
+        alignItems:"center",
+        alignContent:"center"
     },
 
 text:{
+
     color:"black",
-    fontSize:50,
-    ...FONTS.Source_sans_pro,
-    paddingLeft:60,
-    paddingTop:220
+    fontSize:60,
+
+    fontWeight:650,
+    paddingTop:230,    
 },
-textWhite:{
+  textWhite:{
     color:"white",   
-}
+  }
 
 });
 
@@ -27,7 +30,7 @@ textWhite:{
 
 
 export default function Homepage(){
-  
+
     return <View style={styles.container}>
   
     <Text style={styles.text}>Supa<Text style={styles.textWhite}>Menu</Text></Text>
