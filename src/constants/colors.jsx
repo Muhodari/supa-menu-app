@@ -2,4 +2,8 @@ const COLORS = {
     ORANGE: "#F7941D"
 };
 
-export { COLORS }
+const FONTS ={
+    Source_sans_pro:{fontFamily:"Source_sans_pro"}
+}
+
+export { COLORS,FONTS }
