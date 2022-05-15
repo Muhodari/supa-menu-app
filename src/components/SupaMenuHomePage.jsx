@@ -2,6 +2,8 @@ import React from "react";
 
 import {View, Text, TextInput} from "react-native";
 
+import { COLORS } from "../constants/colors";
+
 const SupaMenuHomePage = () => {
     <View>
         <View>
@@ -12,6 +14,6 @@ const SupaMenuHomePage = () => {
 
 const styles = StyleSheet.create({
    header: {
-       color: "#F7941D"
+       color: COLORS.ORANGE
    }
 })
