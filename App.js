@@ -1,13 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Homepage from './src/screens/HomePage.js';
+import SearchRestaurantPage from './src/screens/SearchRestaurantPage.js';
 
 
 
 export default function App() {
 
   return (
-    <Homepage />
+    // <Homepage />
+    <SearchRestaurantPage/>
   );
 }
 
