@@ -14,7 +14,7 @@ export default function App() {
     // <SearchRestaurantPage/>
     // <PaymentSuccess />
     <RateScreen />
-    // <Rating/>
+    
   );
 }
 

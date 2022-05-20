@@ -6,7 +6,7 @@ import Stars from "../components/Stars";
 export default function RateScreen() {
     const [defaultRating, setdefaultRating] =useState(0);
     const [stars, setStarts] =useState([1,2,3,4,5]);
-
+    const [thanksText, setThanksText] =useState(false);
 return (
 <SafeAreaView style={styles.container}>
 <View>
@@ -21,7 +21,12 @@ return (
 <TouchableOpacity
 activeOpacity={0.7}
 key={number}
-onPress={()=>setdefaultRating(number)}
+onPress={()=>{
+    setdefaultRating(number),
+    setThanksText(true)
+        
+    
+    }}
 >
 
 
@@ -47,6 +52,16 @@ color={
 <View style={{width: 200, textAlign: "center"}}>
 <Text style={[styles.text]}>{defaultRating+'/'+5}</Text>
 </View>
+
+<View>
+<Text style={[styles.text]}>
+{thanksText  ==true
+?"Thank You for helping us'+'\n'+'Improve our service !"
+:""
+}
+</Text>
+</View>
+
 {/* <FooterImage /> */}
 
 <View style={styles.mb}>
