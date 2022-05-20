@@ -1,9 +1,11 @@
-import { SafeAreaView, View , Text, StyleSheet, Image } from "react-native";
-// import FooterImage from "../../components/FooterImage";
+import { SafeAreaView, View , Text, StyleSheet, Image,TouchableOpacity } from "react-native";
+import { useState } from "react";
 import Stars from "../components/Stars";
 
+
 export default function RateScreen() {
-const stars = [1,2,3,4,5];
+    const [defaultRating, setdefaultRating] =useState(0);
+    const [stars, setStarts] =useState([1,2,3,4,5]);
 
 return (
 <SafeAreaView style={styles.container}>
@@ -15,18 +17,35 @@ return (
 
 <View style={styles.ratings}>
 {stars.map((number, index)=>(
-<Stars
-key={index}
-rating={number}
 
-color={number=
-3 ? '#ffffff' : '#f7941d'}
-handleTap={(rating)=>()=>{}}/>
+<TouchableOpacity
+activeOpacity={0.7}
+key={number}
+onPress={()=>setdefaultRating(number)}
+>
+
+
+<Stars
+key={number}
+rating={defaultRating}
+
+
+color={
+    number <= defaultRating
+ ? '#f7941d' : '#ffffff'}
+/>
+
+
+
+</TouchableOpacity>
+
 ))}
+
+
 </View>
 
 <View style={{width: 200, textAlign: "center"}}>
-<Text style={[styles.text]}>{"results"}</Text>
+<Text style={[styles.text]}>{defaultRating+'/'+5}</Text>
 </View>
 {/* <FooterImage /> */}
 
