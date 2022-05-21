@@ -56,7 +56,7 @@ color={
 <View>
 <Text style={[styles.text]}>
 {thanksText  ==true
-?"Thank You for helping us'+'\n'+'Improve our service !"
+?"Thank You for helping us\nImprove our service !"
 :""
 }
 </Text>

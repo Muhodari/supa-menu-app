@@ -11,9 +11,9 @@ export default function App() {
 
   return (
     // <Homepage />
-    // <SearchRestaurantPage/>
+    <SearchRestaurantPage/>
     // <PaymentSuccess />
-    <RateScreen />
+    // <RateScreen />
     
   );
 }
