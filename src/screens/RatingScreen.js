@@ -65,7 +65,7 @@ color={
 {/* <FooterImage /> */}
 
 <View style={styles.mb}>
-     <Image source={require('../../assets/yellow-logo.svg')} style={[styles.image,{margin:0}]} />
+     <Image source={require('../../assets/yellow-logo.png')} style={[styles.image,{margin:0}]} />
      </View>
 
 
@@ -105,6 +105,6 @@ image: {
     height: 67,
     margin: 'auto',
     resizeMode: 'contain',
-    width: 300
+    width: 220
 },
 });
