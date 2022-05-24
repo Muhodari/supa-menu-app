@@ -1,5 +1,5 @@
 import React from "react"
-import { View , Text ,StyleSheet,Button, TextInput,TouchableOpacity,SafeAreaView, ScrollView} from "react-native"
+import { View , Text ,StyleSheet,Button, TextInput,TouchableOpacity,SafeAreaView, ScrollView,Platform,StatusBar} from "react-native"
 import BackToPreviousPageButton from "../components/BackToPreviousPageButton";
 import BottomNavigation from "../components/BottomNavigation";
 import RestaurantCard from "../components/RestaurantCard";
@@ -9,7 +9,8 @@ import Icon from 'react-native-vector-icons/AntDesign';
 
 const styles = StyleSheet.create({
     container:{
-    paddingTop:15
+    paddingTop:Platform.OS ==="ios"? 80: 25,
+    // paddingTop:80
     },
 
 
@@ -35,15 +36,13 @@ marginLeft:'5%',
     },
     footer: {
         position: 'fixed',
-        width: "100%",
-        /* Height of the footer*/ 
+        width: "100%", 
         height: '40px',
         backgroundColor:'grey'
-        
     },
     scrollbal:{
-        height:300,
-        marginBottom:40
+        height:380,
+        marginBottom:100
     },
     nearByText:{
         color:COLORS.ORANGE,

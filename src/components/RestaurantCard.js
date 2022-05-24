@@ -38,7 +38,7 @@ textTitle:{
     paddingLeft:15,
     paddingTop:3,
     fontWeight:'500',
-    color:'#9d9ea1'
+    color:'black'
 
 
 },
