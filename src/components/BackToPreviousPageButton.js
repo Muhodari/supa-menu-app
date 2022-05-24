@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
 
 
 container:{
-
+backgroundColor:'yellow'
 
 },
 
@@ -22,7 +22,8 @@ btn:{
   fontSize:43,
   borderRadius:100,
   alignItems:"center",
-  justifyContent:"center"
+  justifyContent:"center",
+  backgroundColor:'grey'
   
 
 }

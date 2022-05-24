@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View , ScrollView ,SafeAreaView } from 'react-native';
 import Homepage from './src/screens/HomePage.js';
 import PaymentSuccess from './src/screens/PaymentSuccess.js';
 import RateScreen from './src/screens/RatingScreen.js';
@@ -11,9 +11,14 @@ export default function App() {
 
   return (
     // <Homepage />
-    <SearchRestaurantPage/>
+
+
+<SearchRestaurantPage/>
+
+    
     // <PaymentSuccess />
     // <RateScreen />
+    
     
     
   );

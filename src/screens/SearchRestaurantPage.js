@@ -1,9 +1,10 @@
 import React from "react"
-import { View , Text ,StyleSheet,Button, TextInput,TouchableOpacity} from "react-native"
+import { View , Text ,StyleSheet,Button, TextInput,TouchableOpacity,SafeAreaView, ScrollView} from "react-native"
 import BackToPreviousPageButton from "../components/BackToPreviousPageButton";
 import BottomNavigation from "../components/BottomNavigation";
 import RestaurantCard from "../components/RestaurantCard";
 import { COLORS } from "../constants/colors";
+import Icon from 'react-native-vector-icons/AntDesign';
 
 
 const styles = StyleSheet.create({
@@ -29,9 +30,45 @@ marginLeft:'5%',
         width:'66%',
         marginLeft:20,
         fontWeight:'600',
-        fontSize:17
+        fontSize:15
        
-    }
+    },
+    footer: {
+        position: 'fixed',
+        width: "100%",
+        /* Height of the footer*/ 
+        height: '40px',
+        backgroundColor:'grey'
+        
+    },
+    scrollbal:{
+        height:300,
+        marginBottom:40
+    },
+    nearByText:{
+        color:COLORS.ORANGE,
+        padding:25,
+        paddingLeft:45,
+        paddingBottom:15
+
+        
+
+    },
+    btn:{
+        backgroundColor:'#F8F8FB',
+        height:34,
+        // width:"18%",
+        width:40,
+        borderRadius:2,
+        alignItems:"center",
+        justifyContent:"center",
+        marginTop:2
+      },
+      textIcon:{
+     fontWeight:'800',
+     fontSize:20,
+    color:COLORS.ORANGE
+      }
 })
 
 
@@ -43,30 +80,65 @@ return (
 <View style={styles.container}>
 
     <View style={styles.header}>
-    <BackToPreviousPageButton/>
+    
+    <TouchableOpacity
+    activeOpacity={0.7}
+    style={styles.btn}
+    onPress={()=>{
+        alert('back to previous page')
+    }}
+
+    >
+        
+        <Icon
+  name="left"
+  backgroundColor="yellow"
+  style={styles.textIcon}
+  />
+
+    </TouchableOpacity>
+
     <TextInput 
     style={styles.textSearchInput}
     placeholder={'Search...'}
     ></TextInput>
     </View>
 
+
     <View
-  style={{
-    borderBottomColor: 'black',
-    borderBottomWidth: 1,
-    paddingTop:20,
+    style={{
+    borderBottomColor: '#F8F8FB',
+    borderBottomWidth: 2,
+    paddingTop:10,
   }}
 />
 
 
+<View>
+    <Text style={styles.nearByText}>NearBy Restaurant </Text>
+</View>
+
+
+<SafeAreaView>
+<ScrollView style={styles.scrollbal}>
+<RestaurantCard />
+<RestaurantCard />
+<RestaurantCard />
+<RestaurantCard />
+<RestaurantCard />
+
+
+
+</ScrollView>
+</SafeAreaView>
 
     {/* seach result */}
-<RestaurantCard />
+
 
 
  {/* bottom */}
 
- <BottomNavigation/>
+ <BottomNavigation style={styles.foooter}/>
 </View>
 );
     

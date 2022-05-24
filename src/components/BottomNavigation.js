@@ -2,9 +2,30 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { StyleSheet } from 'react-native';
 
 // Screens
 import Homepage from '../screens/HomePage';
+
+
+
+
+
+const styles = StyleSheet.create({
+  parantTagStyle: {
+    position: 'relative',
+    position:'fixed'
+  },
+  footerTagStyle: {
+      position: 'absolute',
+      left: 0,
+      bottom: 0,
+      right: 0,
+  
+  },
+})
+
+
 
 
 //Screen names
@@ -17,8 +38,9 @@ const Tab = createBottomTabNavigator();
 
 export default function BottomNavigation() {
   return (
-    <NavigationContainer>
+    <NavigationContainer style={styles.parantTagStyle}>
        <Tab.Navigator
+       style={styles}
         initialRouteName={homeName}
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
@@ -46,9 +68,9 @@ export default function BottomNavigation() {
           style: { padding: 10, height: 70}
         }}>
 
-        <Tab.Screen name={homeName} component={Homepage} />
-        <Tab.Screen name={detailsName} component={Homepage} />
-        <Tab.Screen name={settingsName} component={Homepage} />
+        <Tab.Screen name={homeName} component={Homepage} style={styles.footerTagStyle} />
+        <Tab.Screen name={detailsName} component={Homepage}  style={styles.footerTagStyle}/>
+        <Tab.Screen name={settingsName} component={Homepage} style={styles.footerTagStyle}/>
 
       </Tab.Navigator>
     </NavigationContainer>

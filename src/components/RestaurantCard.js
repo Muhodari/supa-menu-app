@@ -13,8 +13,8 @@ container:{
 },
 
 card:{
-backgroundColor:'#f8f8fb',
-height:85,
+backgroundColor:'#F8F8FB',
+height:95,
 paddingTop:10,
 width:'85%',
 paddingBottom:5,
@@ -26,9 +26,9 @@ borderRadius:20,
 
 },
 image:{
-    width:60,
-    height:65,
-    borderRadius:15,
+    width:90,
+    height:75,
+    borderRadius:10,
     paddingLeft:23,
 
 
@@ -37,7 +37,8 @@ textTitle:{
     fontSize:16,
     paddingLeft:15,
     paddingTop:3,
-    fontWeight:'800'
+    fontWeight:'500',
+    color:'#9d9ea1'
 
 
 },
