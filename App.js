@@ -12,12 +12,12 @@ export default function App() {
   return (
     // <Homepage />
 
+    <RateScreen />
 
-<SearchRestaurantPage/>
+///* <SearchRestaurantPage/> */}
 
     
     // <PaymentSuccess />
-    // <RateScreen />
     
     
     
