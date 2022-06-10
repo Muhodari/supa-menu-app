@@ -24,6 +24,10 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-native": "0.68.2",
+    "react-native-paper": "^4.12.1",
+    "react-native-web": "0.17.7",
+    "react-router-native": "^6.3.0"
+
     "react-native-easy-rating": "^0.2.1",
     "react-native-gesture-handler": "~2.2.1",
     "react-native-ratings": "^8.1.0",
@@ -33,6 +37,7 @@
     "react-native-vector-icons": "^9.1.0",
     "react-native-web": "0.17.7",
     "rn-slick-bottom-tabs": "^1.1.1"
+
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

@@ -33,6 +33,7 @@ export default function Homepage(){
     <Text style={styles.text}>Supa<Text style={styles.textWhite}>Menu</Text></Text>
     
     
+    
       </View>
   
   
