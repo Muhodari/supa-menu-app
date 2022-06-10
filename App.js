@@ -1,11 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SignInScreen } from "./src/screens/SignInScreen";
 
-import { SupaMenuHomePage } from "./src/components/SupaMenuHomePage.jsx";
+import { Menu } from "./src/screens/Menu";
 
 export default function App() {
   return (
-    <SupaMenuHomePage/>
+    <>
+    <SignInScreen/>
+    <Menu/>
+    </>
   );
 }
 
