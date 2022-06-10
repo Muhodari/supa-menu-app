@@ -1,7 +1,6 @@
 import React from "react"
 import { View , Text ,StyleSheet,Button, TextInput,TouchableOpacity,SafeAreaView, ScrollView,Platform,StatusBar} from "react-native"
 import BackToPreviousPageButton from "../components/BackToPreviousPageButton";
-import BottomNavigation from "../components/BottomNavigation";
 import RestaurantCard from "../components/RestaurantCard";
 import { COLORS } from "../constants/colors";
 import Icon from 'react-native-vector-icons/AntDesign';
@@ -137,7 +136,7 @@ return (
 
  {/* bottom */}
 
- <BottomNavigation style={styles.foooter}/>
+ {/* <BottomNavigation style={styles.foooter}/> */}
 </View>
 );
     
