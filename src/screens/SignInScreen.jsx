@@ -6,7 +6,7 @@ import { COLORS } from "../constants/colors";
 
 import { Form } from "../components/Form";
 
-export const SignInScreen = () => {
+const SignInScreen = () => {
  return(
     <View style={styles.container}>
     <View>
@@ -26,3 +26,5 @@ const styles = StyleSheet.create({
    },
 
 })
+
+export default SignInScreen

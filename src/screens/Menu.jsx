@@ -6,7 +6,7 @@ import { COLORS } from "../constants/colors";
 
 import { MenuComponent } from "../components/MenuComponent";
 
-export const Menu = () => {
+const Menu = () => {
  return(
     <View style={styles.container}>
     <View>
@@ -26,3 +26,5 @@ const styles = StyleSheet.create({
    },
 
 })
+
+export default Menu;
