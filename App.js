@@ -1,13 +1,12 @@
-import { SignInScreen } from "./src/screens/SignInScreen";
+import { NavigationContainer } from "@react-navigation/native";
 
-import { Menu } from "./src/screens/Menu";
+import Navigator from "./src/Navigation";
 
 export default function App() {
   return (
-    <>
-    <SignInScreen/>
-    <Menu/>
-    </>
+    <NavigationContainer>
+    <Navigator/>
+    </NavigationContainer>
   );
 }
 

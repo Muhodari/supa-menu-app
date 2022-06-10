@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Text, StyleSheet, TextInput ,View, SafeAreaView, TouchableOpacity} from "react-native";
+import { Text, StyleSheet, TextInput ,View, SafeAreaView, TouchableOpacity, Alert} from "react-native";
 
 import { COLORS } from "../constants/colors";
 
@@ -10,13 +10,38 @@ import { FontAwesome } from '@expo/vector-icons';
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
+import axios from "axios";
+
 export const Form = () => {
 
     const [fullName, setFullName] = useState("");
 
-    const [phoneNumber, setPhoneNumber] = useState("");
+    const [mobile, setMobile] = useState("");
 
     const [email, setEmail] = useState("");
+
+    const [password, setPassword] = useState("");
+    
+    const sendData = () => {
+        axios.post("http://196.223.240.154:8099/supapp/api/auth/client/signup", {
+            firstName: fullName.split(" ")[0],
+            lastName: fullName.split(" ")[1],
+            password,
+            mobile,
+            email
+        },      
+        )
+        .then(res => {
+            Alert.alert("Success", "Registration completed successfully");
+            console.log(res.data);
+        })
+        .catch(err => {
+            Alert.alert("Error", "Registration didn't complete successfully");
+            console.log(err.data);
+        }
+        )
+    }
+
 
     return (
         <View style={styles.mainBody}>
@@ -47,13 +72,24 @@ export const Form = () => {
                 />
                 </View>
 
+                <View style = {styles.input}>
+                <Feather name="user" size={24} color="gray" />
+                <TextInput
+                style={styles.textInput}
+                secureTextEntry={true}
+                onChangeText = {(val)=>setPassword(val)}
+                placeholder="Password"
+                value = {password}
+                />
+                </View>
+
                 <View style={styles.input}>
                 <FontAwesome name="phone" size={24} color="gray" />
                 <TextInput
                 style={styles.textInput}
-                onChangeText = {(val)=> setPhoneNumber(val)}
+                onChangeText = {(val)=> setMobile(val)}
                 placeholder="Phone Number"
-                value = {phoneNumber}
+                value = {mobile}
                 />
                 </View>
                 
@@ -69,6 +105,7 @@ export const Form = () => {
 
              <TouchableOpacity
              style = {styles.proceedButton}
+                onPress = {sendData}
              >
             <Text style={styles.textButton}>Proceed</Text>
              </TouchableOpacity>
