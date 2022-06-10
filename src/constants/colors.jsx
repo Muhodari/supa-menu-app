@@ -3,8 +3,8 @@ const COLORS = {
 
     BLUE: "#253565",
     GRAY: "#939BB3",
-    INPUT: "#ECF1FF"
-   default: '#F7941D',
+    INPUT: "#ECF1FF",
+   default: "#F7941D",
    green: '#25d482',
 };
 
