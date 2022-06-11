@@ -139,6 +139,28 @@ text:{
 
 export default function SignIn(){
 
+     const [email, setEmail] = useState("");
+
+    const [password, setPassword] = useState("");
+
+    const sendData = () => {
+      axios.post("http://196.223.240.154:8099/supapp/api/auth/client/signin", {
+          login: email,
+          password: password
+      },      
+      )
+      .then(res => {
+          Alert.alert("Success", "Login Successful");
+          console.log(res.data);
+      })
+      .catch(err => {
+          Alert.alert("Error", "Login Failed");
+          console.log(err.data);
+      }
+      )
+  }
+
+
     return(
         <>
         <View style={styles.container}>
@@ -150,14 +172,14 @@ export default function SignIn(){
 
         <View style={styles.formStyle}>
         <Image style={styles.icons} source={require('../../assets/images/icons8-mail-24.png')} />
-        <TextInput style={styles.input} placeholder='Your Email'  />
+        <TextInput style={styles.input} placeholder='Your Email' value={email} />
           </View>
           <View style={styles.formStyle}>  
             <Image style={styles.icons} source={require('../../assets/images/icons8-password-32.png')} />
-            <TextInput style={styles.input} placeholder='Password' secureTextEntry/>
+            <TextInput style={styles.input} placeholder='Password' secureTextEntry={true} value={password}/>
           </View>
 
-          <Pressable style={styles.buttonSignIn}>
+          <Pressable style={styles.buttonSignIn} onPressIn={login}>
             <Text style={styles.buttonText}>Sign In</Text>
         </Pressable>
         <View style={styles.allLine}>
