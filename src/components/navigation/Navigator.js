@@ -9,7 +9,6 @@ import {
 
 import Homepage from '../../screens/HomePage';
 import PaymentSuccess from '../../screens/PaymentSuccess';
-import * as SecureStore from 'expo-secure-store';
 import RateScreen from '../../screens/RatingScreen';
 import SearchRestaurantPage from '../../screens/SearchRestaurantPage';
 import DashboardScreen from '../../screens/DashboardScreen';
