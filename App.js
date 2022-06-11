@@ -10,6 +10,8 @@ import SignIn from './src/screens/SignIn.js';
 import PaymentSuccess from './src/screens/PaymentSuccess.js';
 import RateScreen from './src/screens/RatingScreen.js';
 import SearchRestaurantPage from './src/screens/SearchRestaurantPage.js';
+import { SignInScreen } from './src/screens/SignInScreen.jsx';
+import { Menu } from './src/screens/Menu.jsx';
 
 export default function App() {
 
@@ -18,7 +20,7 @@ export default function App() {
   <NavigationContainer>
     <Navigator/>
   </NavigationContainer>  
-    
+  
 
   );
 }
