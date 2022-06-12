@@ -29,7 +29,3 @@ const styles = StyleSheet.create({
 })
 
 export default SignInScreen;
-
-niba akoze login ikamutwara kuri DashboardScreen
-
-reba muri web browser
