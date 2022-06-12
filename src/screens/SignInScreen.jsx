@@ -5,6 +5,7 @@ import {View, StyleSheet} from "react-native";
 import { COLORS } from "../constants/colors";
 
 import { Form } from "../components/Form";
+import DashboardScreen from "./DashboardScreen";
 
 export const SignInScreen = () => {
  return(
@@ -26,3 +27,9 @@ const styles = StyleSheet.create({
    },
 
 })
+
+export default SignInScreen;
+
+niba akoze login ikamutwara kuri DashboardScreen
+
+reba muri web browser
