@@ -13,6 +13,8 @@ import * as SecureStore from 'expo-secure-store';
 import RateScreen from '../../screens/RatingScreen';
 import SearchRestaurantPage from '../../screens/SearchRestaurantPage';
 import DashboardScreen from '../../screens/DashboardScreen';
+import SignInScreen from '../../screens/SignInScreen.jsx';
+import SignIn from "../../screens/SignIn.js";
 
 
 export default function Navigator() {
@@ -35,12 +37,12 @@ function AuthNavigator() {
             <Stack.Screen name="Splash" component={Homepage} />
             <Stack.Screen
                 name="Login"
-                component={PaymentSuccess}
+                component={SignIn}
                 options={{ headerShown: false }}
             />
             <Stack.Screen
                 name="Register"
-                component={Homepage}
+                component={SignInScreen}
                 options={{ headerShown: false }}
             />
         </Stack.Navigator>
@@ -53,15 +55,15 @@ const Tabs= createBottomTabNavigator();
 
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-    // useEffect(() => {
-    //     async function getToken() {
-    //         const token = await SecureStore.getItemAsync('tokens');
-    //         if (token) {
-    //             setIsAuthenticated(true);
-    //         }
-    //     }
-    //     getToken();
-    // },[]);
+    useEffect(() => {
+        async function getToken() {
+            const token = await SecureStore.getItemAsync('tokens');
+            if (token) {
+                setIsAuthenticated(true);
+            }
+        }
+        getToken();
+    },[]);
 
 
     if(isAuthenticated)
