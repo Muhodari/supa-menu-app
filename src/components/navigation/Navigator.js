@@ -64,8 +64,7 @@ const Tabs= createBottomTabNavigator();
     // },[]);
 
 
-    // if(!isAuthenticated)
-    //     return <AuthNavigator/>;
+    if(isAuthenticated)
 
     return (
         <Tabs.Navigator
@@ -173,4 +172,6 @@ const Tabs= createBottomTabNavigator();
             />
         </Tabs.Navigator>
     );
+
+    return <AuthNavigator/>;
 }

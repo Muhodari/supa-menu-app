@@ -1,7 +1,11 @@
-import React from 'react'
-import { View,TextInput,Text, StyleSheet, Pressable ,Platform,StatusBar, Image} from "react-native"
+import React, { useState } from 'react'
+import { View,TextInput,Text, StyleSheet, Pressable ,Platform,StatusBar, Image, Alert} from "react-native"
 import { Colors } from 'react-native-paper';
 import {COLORS, FONTS} from '../constants/colors'
+import * as SecureStore from 'expo-secure-store';
+
+
+import axios from 'axios';
 
 const styles = StyleSheet.create({
     container:{
@@ -139,6 +143,34 @@ text:{
 
 export default function SignIn(){
 
+     const [email, setEmail] = useState("");
+
+    const [password, setPassword] = useState("");
+
+    const login = () => {
+      axios.post("http://196.223.240.154:8099/supapp/api/auth/signin", {
+          login: email,
+          password
+      },      
+      )
+      .then(res => {
+        
+        SecureStore.setItemAsync('tokens', res.data.token).then(() => {
+          Alert.alert("Success", "Login Successful");
+          }).catch((err) => {
+            Alert.alert("Error", "Login Failed");
+          });
+
+          console.log(res);
+      })
+      .catch(err => {
+          Alert.alert("Error", "Login Failed");
+          console.log(err.data);
+      }
+      )
+  }
+
+
     return(
         <>
         <View style={styles.container}>
@@ -150,14 +182,14 @@ export default function SignIn(){
 
         <View style={styles.formStyle}>
         <Image style={styles.icons} source={require('../../assets/images/icons8-mail-24.png')} />
-        <TextInput style={styles.input} placeholder='Your Email'  />
+        <TextInput style={styles.input} placeholder='Your Email' value={email}  onChangeText = {(val)=>setEmail(val)} />
           </View>
           <View style={styles.formStyle}>  
             <Image style={styles.icons} source={require('../../assets/images/icons8-password-32.png')} />
-            <TextInput style={styles.input} placeholder='Password' secureTextEntry/>
+            <TextInput style={styles.input} placeholder='Password' secureTextEntry={true} value={password}  onChangeText = {(val)=>setPassword(val)}/>
           </View>
 
-          <Pressable style={styles.buttonSignIn}>
+          <Pressable style={styles.buttonSignIn} onPressIn={login}>
             <Text style={styles.buttonText}>Sign In</Text>
         </Pressable>
         <View style={styles.allLine}>
