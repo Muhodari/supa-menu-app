@@ -7,15 +7,10 @@ import {
     CardStyleInterpolators,
 } from '@react-navigation/stack';
 
-import Homepage from '../../screens/HomePage';
-import PaymentSuccess from '../../screens/PaymentSuccess';
-import * as SecureStore from 'expo-secure-store';
-import RateScreen from '../../screens/RatingScreen';
-import SearchRestaurantPage from '../../screens/SearchRestaurantPage';
-import DashboardScreen from '../../screens/DashboardScreen';
-import SignInScreen from '../../screens/SignInScreen.jsx';
-import SignIn from "../../screens/SignIn.js";
-
+import LoginScreen from '../../screens/Login/LoginScreen'
+import SignupScreen from '../../screens/Singup/SignupScreen';
+import DashbordScreen from "../../screens/Dashbord/Dashbord";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Navigator() {
     return <AppNavigator />;
@@ -34,15 +29,15 @@ function AuthNavigator() {
                 cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
             }}
         >
-            <Stack.Screen name="Splash" component={Homepage} />
+            <Stack.Screen name="Splash" component={DashbordScreen} />
             <Stack.Screen
                 name="Login"
-                component={SignIn}
+                component={LoginScreen}
                 options={{ headerShown: false }}
             />
             <Stack.Screen
                 name="Register"
-                component={SignInScreen}
+                component={SignupScreen}
                 options={{ headerShown: false }}
             />
         </Stack.Navigator>
@@ -55,16 +50,16 @@ const Tabs= createBottomTabNavigator();
 
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+    
     useEffect(() => {
-        async function getToken() {
-            const token = await SecureStore.getItemAsync('tokens');
+       async function getToken() {
+      const token = await AsyncStorage.getItem('token');
             if (token) {
                 setIsAuthenticated(true);
             }
         }
         getToken();
     },[]);
-
 
     if(isAuthenticated)
 
@@ -117,7 +112,7 @@ const Tabs= createBottomTabNavigator();
                         <AntDesign name="home" size={24} color={color} />
                     ),
                 }}
-                component={DashboardScreen}
+                component={DashbordScreen}
             />
             <Tabs.Screen
                 options={{
@@ -130,7 +125,7 @@ const Tabs= createBottomTabNavigator();
                     ),
                 }}
                 name="Notification"
-                component={RateScreen}
+                component={LoginScreen}
             />
             <Tabs.Screen
                 options={{
@@ -143,7 +138,7 @@ const Tabs= createBottomTabNavigator();
                     ),
                 }}
                 name="Scan"
-                component={SearchRestaurantPage}
+                component={SignupScreen}
             />
             <Tabs.Screen
                 options={{
@@ -156,7 +151,7 @@ const Tabs= createBottomTabNavigator();
                     ),
                 }}
                 name="Clock"
-                component={PaymentSuccess}
+                component={DashbordScreen}
             />
  
             <Tabs.Screen
@@ -170,7 +165,7 @@ const Tabs= createBottomTabNavigator();
                     ),
                 }}
                 name="Cart"
-                component={Homepage}
+                component={LoginScreen}
             />
         </Tabs.Navigator>
     );
